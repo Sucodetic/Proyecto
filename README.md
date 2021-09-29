@@ -1,2 +1,2 @@
 # Proyecto
-Proyecto gestión de ventas
+Proyecto gestión de ventas 1.0
