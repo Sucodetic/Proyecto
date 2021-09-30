@@ -11,6 +11,27 @@ body {
     background-color: #f1f1f1;
 }
 
+.card {
+    display: inline-block;
+}
+
+.card-2 {
+    margin-left: 10px;
+}
+
+.contenedor-formulario-ventas {
+    width: 80%;
+    background-color: white;
+    padding: 4%;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 30%), 0 0 2px rgb(0 0 0 / 10%) inset;
+}
+
+
+.contenedor-tarjetas {
+    margin-top:8%
+}
+
 .contenedor-separador {
     margin-top: 2%;
     margin-bottom: 2%;
@@ -25,6 +46,18 @@ body {
 form button {
     width: 200px;
     justify-content: center;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}
+
+footer span:hover {
+    font-weight: bold;
 }
 
 .logo{
@@ -74,10 +107,21 @@ nav {
     font-weight: bold;
 }
 
-
 @media screen and (max-width: 992px){
     .login-container{
         width: 70%;
+    }
+    .contenedor-formulario-ventas {
+        width: 70%;
+    }
+
+    .contenedor-tabla-ventas {
+        margin-top: 10px;
+        margin-bottom: 10% ;
+    }
+
+    .buscador {
+        margin-top:50px;
     }
 }
 
@@ -85,10 +129,45 @@ nav {
     .login-container{
         width: 80%;
     }
+
+    .contenedor-formulario-ventas {
+        width: 80%;
+    }
+
+    .contenedor-tabla-ventas {
+        margin-top: 5px;
+    }
+
+    .buscador {
+        margin-top:50px;
+    }
+}
+
+@media screen and (max-width: 544px){
+    .card-2 {
+        margin-top: 10px;
+    }
+
+    .card-3 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
 }
 
 @media screen and (max-width: 455px){
     .login-container{
         width: 90%;
     }
+
+    .contenedor-formulario-ventas {
+        width: 90%;
+    }
+
+    .contenedor-tabla-ventas {
+        margin-top: 10px;
+    }
+
+    .buscador {
+        margin-top:50px;
+    }   
 }
