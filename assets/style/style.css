@@ -37,6 +37,10 @@ body {
     margin-bottom: 2%;
 }
 
+.contenedor-formulario-editar-ventas {
+    display: none;
+}
+
 .formulario {
     position: absolute;
     margin-top: 120px;
