@@ -101,7 +101,9 @@ function validarIdVenta(id) {
   let bandera = false;
 
   ventas.forEach((venta) => {
-    venta.id === id ? (bandera = true) : (bandera = false);
+    if (venta.id == id) {
+      bandera = true;
+    }
   });
 
   return bandera;
