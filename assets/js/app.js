@@ -58,7 +58,8 @@ function agregarVentas() {
       document.getElementById("descripcionProducto").value = "";
       document.getElementById("valorUnitario").value = "";
     } else {
-      alert("El id ya existe");
+      msg = "El id ingresado ya existe en la base de datos.";
+      mostrarError(msg);
     }
   } else {
     alert("Todos los campos deben ser diligenciados");
