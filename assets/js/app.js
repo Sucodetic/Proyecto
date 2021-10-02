@@ -84,3 +84,13 @@ function validarCampos(id, descripcion, precio) {
     return false;
   }
 }
+
+function validarIdVenta(id) {
+  let bandera = false;
+
+  ventas.forEach((venta) => {
+    venta.id === id ? (bandera = true) : (bandera = false);
+  });
+
+  return bandera;
+}
