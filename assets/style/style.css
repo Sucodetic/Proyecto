@@ -41,6 +41,11 @@ body {
     display: none;
 }
 
+#filtro {
+    width: 70%;
+    display: inline-block;
+}
+
 .formulario {
     position: absolute;
     margin-top: 120px;
