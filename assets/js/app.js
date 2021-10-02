@@ -81,6 +81,14 @@ function cargarVentas() {
 
 cargarVentas();
 
+function mostrarError(msg) {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: `${msg}`,
+  });
+}
+
 function validarCampos(id, descripcion, precio) {
   if (id !== "" && descripcion !== "" && precio !== "") {
     return true;
