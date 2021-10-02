@@ -23,6 +23,10 @@ let venta3 = {
 
 ventas.push(venta1, venta2, venta3);
 
+$botonGuardarVenta = document.getElementById("guardarVenta");
+
+$botonGuardarVenta.addEventListener("click", agregarVentas);
+
 function agregarVentas() {
   let $tbody = document.getElementById("leerVentas");
   let id = document.getElementById("idProducto").value;
