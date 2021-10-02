@@ -35,27 +35,31 @@ function agregarVentas() {
   let estado = document.getElementById("estadoProducto").value;
 
   if (validarCampos(id, descripcion, precio)) {
-    venta = {
-      id,
-      descripcion,
-      precio,
-      estado,
-    };
+    if (!validarIdVenta(id)) {
+      venta = {
+        id,
+        descripcion,
+        precio,
+        estado,
+      };
 
-    ventas.push(venta);
+      ventas.push(venta);
 
-    $tbody.innerHTML += `<tr>
-    <td>${venta.id}</td>
-    <td>${venta.descripcion}</td>
-    <td>${venta.precio}</td>
-    <td>${venta.estado}</td>
-    <td><button>Borrar</button></td>
-    <td><button>Editar</button></td>
-</tr>`;
+      $tbody.innerHTML += `<tr>
+      <td>${venta.id}</td>
+      <td>${venta.descripcion}</td>
+      <td>${venta.precio}</td>
+      <td>${venta.estado}</td>
+      <td><button>Borrar</button></td>
+      <td><button>Editar</button></td>
+  </tr>`;
 
-    document.getElementById("idProducto").value = "";
-    document.getElementById("descripcionProducto").value = "";
-    document.getElementById("valorUnitario").value = "";
+      document.getElementById("idProducto").value = "";
+      document.getElementById("descripcionProducto").value = "";
+      document.getElementById("valorUnitario").value = "";
+    } else {
+      alert("El id ya existe");
+    }
   } else {
     alert("Todos los campos deben ser diligenciados");
   }
