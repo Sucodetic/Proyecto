@@ -66,6 +66,17 @@ function agregarVentas() {
   }
 }
 
+function buscarVentaPorId(id) {
+  let venta = {};
+  ventas.forEach((el) => {
+    if (el.id == id) {
+      venta = el;
+    }
+  });
+
+  return venta;
+}
+
 function cargarVentas() {
   let $tbody = document.getElementById("leerVentas");
   ventas.forEach((venta) => {
