@@ -11,6 +11,10 @@ body {
     background-color: #f1f1f1;
 }
 
+#btnCancelar {
+    display: none;
+}
+
 .card {
     display: inline-block;
 }
@@ -39,6 +43,12 @@ body {
 
 .contenedor-formulario-editar-ventas {
     display: none;
+}
+
+#filtro {
+    width: 60%;
+    display: inline-block;
+    margin-right: 2%;
 }
 
 .formulario {
