@@ -24,15 +24,11 @@ let venta3 = {
 ventas.push(venta1, venta2, venta3);
 
 function agregarVentas() {
-  let ventas = [];
-
   let $tbody = document.getElementById("leerVentas");
   let id = document.getElementById("idProducto").value;
   let descripcion = document.getElementById("descripcionProducto").value;
   let precio = document.getElementById("valorUnitario").value;
   let estado = document.getElementById("estadoProducto").value;
-
-  console.log(validarCampos(id, descripcion, precio));
 
   if (validarCampos(id, descripcion, precio)) {
     venta = {
@@ -44,16 +40,14 @@ function agregarVentas() {
 
     ventas.push(venta);
 
-    ventas.forEach((el) => {
-      $tbody.innerHTML += `<tr>
-      <td>${el.id}</td>
-      <td>${el.descripcion}</td>
-      <td>${el.precio}</td>
-      <td>${el.estado}</td>
-      <td><button>Borrar</button></td>
-      <td><button>Editar</button></td>
-  </tr>`;
-    });
+    $tbody.innerHTML += `<tr>
+    <td>${venta.id}</td>
+    <td>${venta.descripcion}</td>
+    <td>${venta.precio}</td>
+    <td>${venta.estado}</td>
+    <td><button>Borrar</button></td>
+    <td><button>Editar</button></td>
+</tr>`;
 
     document.getElementById("idProducto").value = "";
     document.getElementById("descripcionProducto").value = "";
