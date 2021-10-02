@@ -92,6 +92,12 @@ nav {
 }
 
 
+table {
+    display: block;
+    height: 365px;
+    overflow-y: scroll;
+}
+
 .titulo {
     position: absolute;
 }
