@@ -75,6 +75,11 @@ function buscarVentaPorId(id) {
   return venta;
 }
 
+function cancelarFiltrado() {
+  cargarVentas();
+  $botonCancelarFiltro.style.display = "none";
+}
+
 function cargarVentas() {
   let $tbody = document.getElementById("leerVentas");
 
