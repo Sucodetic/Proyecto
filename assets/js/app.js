@@ -79,6 +79,9 @@ function buscarVentaPorId(id) {
 
 function cargarVentas() {
   let $tbody = document.getElementById("leerVentas");
+
+  $tbody.innerHTML = "";
+
   ventas.forEach((venta) => {
     $tbody.innerHTML += `<tr>
     <td>${venta.id}</td>
