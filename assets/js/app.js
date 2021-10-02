@@ -63,6 +63,22 @@ function agregarVentas() {
   }
 }
 
+function cargarVentas() {
+  let $tbody = document.getElementById("leerVentas");
+  ventas.forEach((venta) => {
+    $tbody.innerHTML += `<tr>
+    <td>${venta.id}</td>
+    <td>${venta.descripcion}</td>
+    <td>${venta.precio}</td>
+    <td>${venta.estado}</td>
+    <td><button>Borrar</button></td>
+    <td><button>Editar</button></td>
+</tr>`;
+  });
+}
+
+cargarVentas();
+
 function validarCampos(id, descripcion, precio) {
   if (id !== "" && descripcion !== "" && precio !== "") {
     return true;
