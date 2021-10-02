@@ -6,6 +6,12 @@ $botonGuardarVenta.addEventListener("click", agregarVentas);
 $botonEditarVenta = document.getElementById("editarVenta");
 $botonEditarVenta.addEventListener("click", actualizarVenta);
 
+$botonBuscarFiltro = document.getElementById("btnBuscar");
+$botonBuscarFiltro.addEventListener("click", filtrar);
+
+$botonCancelarFiltro = document.getElementById("btnCancelar");
+$botonCancelarFiltro.addEventListener("click", cancelarFiltrado);
+
 function actualizarVenta() {
   let id = document.getElementById("idProductoEditar").value;
   let descripcion = document.getElementById("descripcionEditar").value;
