@@ -117,6 +117,12 @@ function editarVenta(id) {
   }
 }
 
+function limpiarCampos() {
+  let id = (document.getElementById("idProducto").value = "");
+  let descripcion = (document.getElementById("descripcionProducto").value = "");
+  let precio = (document.getElementById("valorUnitario").value = "");
+}
+
 function mostrarError(msg) {
   Swal.fire({
     icon: "error",
