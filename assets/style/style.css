@@ -11,6 +11,10 @@ body {
     background-color: #f1f1f1;
 }
 
+#btnCancelar {
+    display: none;
+}
+
 .card {
     display: inline-block;
 }
@@ -42,8 +46,9 @@ body {
 }
 
 #filtro {
-    width: 70%;
+    width: 60%;
     display: inline-block;
+    margin-right: 2%;
 }
 
 .formulario {
