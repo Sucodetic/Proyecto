@@ -153,3 +153,28 @@ function validarIdVenta(id) {
 
   return bandera;
 }
+
+function filtrar() {
+  $botonCancelarFiltro.style.display = "inline-block";
+
+  let input, filter, table, tr, td, i, j, visible;
+  input = document.getElementById("filtro");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("leerVentas");
+  tr = table.getElementsByTagName("tr");
+
+  for (i = 0; i < tr.length; i++) {
+    visible = false;
+    td = tr[i].getElementsByTagName("td");
+    for (j = 0; j < td.length; j++) {
+      if (td[j] && td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        visible = true;
+      }
+    }
+    if (visible === true) {
+      tr[i].style.display = "";
+    } else {
+      tr[i].style.display = "none";
+    }
+  }
+}
