@@ -29,7 +29,26 @@ $botonGuardarVenta.addEventListener("click", agregarVentas);
 $botonEditarVenta = document.getElementById("editarVenta");
 $botonEditarVenta.addEventListener("click", actualizarVenta);
 
-$botonGuardarVenta.addEventListener("click", agregarVentas);
+function actualizarVenta() {
+  let id = document.getElementById("idProductoEditar").value;
+  let descripcion = document.getElementById("descripcionEditar").value;
+  let precio = document.getElementById("valorUnitarioEditar").value;
+  let estado = document.getElementById("estadoEditar").value;
+
+  ventas.map((el) => {
+    if (el.id == id) {
+      el.descripcion = descripcion;
+      el.precio = precio;
+      el.estado = estado;
+    }
+  });
+
+  document.getElementById("formularioRegistrar").style.display = "block";
+  document.getElementById("formularioEditar").style.display = "none";
+
+  cargarVentas();
+  limpiarCampos();
+}
 
 function agregarVentas() {
   let $tbody = document.getElementById("leerVentas");
