@@ -54,9 +54,7 @@ function agregarVentas() {
       <td><button onclick="editarVenta(${venta.id})">Editar</button></td>
   </tr>`;
 
-      document.getElementById("idProducto").value = "";
-      document.getElementById("descripcionProducto").value = "";
-      document.getElementById("valorUnitario").value = "";
+      limpiarCampos();
     } else {
       msg = "El id ingresado ya existe en la base de datos.";
       mostrarError(msg);
