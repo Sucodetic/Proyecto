@@ -96,6 +96,27 @@ function cargarVentas() {
 
 cargarVentas();
 
+function editarVenta(id) {
+  document.getElementById("formularioRegistrar").style.display = "none";
+  document.getElementById("formularioEditar").style.display = "block";
+
+  let $inputId = document.getElementById("idProductoEditar");
+  let $inputDescripcion = document.getElementById("descripcionEditar");
+  let $inputValoUnitario = document.getElementById("valorUnitarioEditar");
+  let $selectEstado = document.getElementById("estadoEditar");
+
+  try {
+    let venta = buscarVentaPorId(id);
+
+    $inputId.value = venta.id;
+    $inputDescripcion.value = venta.descripcion;
+    $inputValoUnitario.value = venta.precio;
+    $selectEstado.value = venta.estado;
+  } catch (err) {
+    alert("Ocurrió el siguiente error: ", err);
+  }
+}
+
 function mostrarError(msg) {
   Swal.fire({
     icon: "error",
