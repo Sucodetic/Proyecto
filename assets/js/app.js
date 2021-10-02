@@ -1,3 +1,28 @@
+let ventas = [];
+
+let venta1 = {
+  id: "1",
+  descripcion: "Platos",
+  precio: "1000",
+  estado: "Disponible",
+};
+
+let venta2 = {
+  id: "2",
+  descripcion: "Cubiertos",
+  precio: "2000",
+  estado: "Disponible",
+};
+
+let venta3 = {
+  id: "3",
+  descripcion: "Vasos",
+  precio: "500",
+  estado: "Disponible",
+};
+
+ventas.push(venta1, venta2, venta3);
+
 function agregarVentas() {
   let ventas = [];
 
