@@ -75,7 +75,7 @@ function cargarVentas() {
     <td>${venta.precio}</td>
     <td>${venta.estado}</td>
     <td><button>Borrar</button></td>
-    <td><button>Editar</button></td>
+    <td><button onclick="editarVenta(${venta.id})">Editar</button></td>
 </tr>`;
   });
 }
