@@ -24,6 +24,10 @@ let venta3 = {
 ventas.push(venta1, venta2, venta3);
 
 $botonGuardarVenta = document.getElementById("guardarVenta");
+$botonGuardarVenta.addEventListener("click", agregarVentas);
+
+$botonEditarVenta = document.getElementById("editarVenta");
+$botonEditarVenta.addEventListener("click", actualizarVenta);
 
 $botonGuardarVenta.addEventListener("click", agregarVentas);
 
