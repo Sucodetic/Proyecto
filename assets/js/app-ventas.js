@@ -229,3 +229,15 @@ function confirmarRegistroVenta(nombreCliente, detalleVenta, valorVenta, estado)
     },
   });
 }
+
+function confirmarActualizacionVenta() {
+  Swal.fire({
+    title: "Actualización exitosa",
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
+}
