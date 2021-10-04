@@ -62,7 +62,7 @@ function agregarVentas() {
       };
 
       ventas.push(venta);
-      confirmarRegistroVenta(name, detalle, valor);
+      confirmarRegistroVenta(name, detalle, valor, estado);
 
       $tbody.innerHTML += `<tr>
       <td>${venta.id}</td>
@@ -213,12 +213,14 @@ function filtrar() {
   }
 }
 
-function confirmarRegistroVenta(nombreCliente, detalleVenta, valorVenta) {
+function confirmarRegistroVenta(nombreCliente, detalleVenta, valorVenta, estado) {
   Swal.fire({
     title: "Registro exitoso",
-    html: `Nombre del cliente ${nombreCliente}<br>
-    Detalle de la vente ${detalleVenta} <br>
-    Valor de la venta ${valorVenta}`,
+    html: `<b>Nombre del cliente: </b> ${nombreCliente}<br>
+    <b>Detalle de la venta: </b> ${detalleVenta} <br>
+    <b>Valor de la venta: </b> $${valorVenta}<br>
+    <b>Estado de la venta: </b>${estado}`,
+
     showClass: {
       popup: "animate__animated animate__fadeInDown",
     },
