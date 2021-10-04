@@ -20,17 +20,22 @@ function actualizarVenta() {
 
   ventas.map((el) => {
     if (el.id == id) {
-      el.descripcion = descripcion;
-      el.precio = precio;
-      el.estado = estado;
+      if (descripcion != "" && precio != "") {
+        el.descripcion = descripcion;
+        el.precio = precio;
+        el.estado = estado;
+
+        document.getElementById("formularioRegistrar").style.display = "block";
+        document.getElementById("formularioEditar").style.display = "none";
+
+        cargarVentas();
+        limpiarCampos();
+        confirmarActualizacionProducto();
+      } else {
+        alert("Todos los campos deben ser diligenciados");
+      }
     }
   });
-
-  document.getElementById("formularioRegistrar").style.display = "block";
-  document.getElementById("formularioEditar").style.display = "none";
-
-  cargarVentas();
-  limpiarCampos();
 }
 
 function agregarVentas() {
@@ -187,7 +192,7 @@ function filtrar() {
 
 function confirmarActualizacionProducto() {
   Swal.fire({
-    title: "Actualización de producto exitoso",
+    title: "Producto actualizado exitosamente",
     showClass: {
       popup: "animate__animated animate__fadeInDown",
     },
