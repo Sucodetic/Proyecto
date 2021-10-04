@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+
+    <title>Registro de ventas</title>
+  </head>
+  <body>
+    <!-- inicio navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <h3>Logo</h3>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./panel-ventas.html">Página principal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./login.html">Cerrar sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- fin navbar -->
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="container contenedor-formulario-ventas justify-content-center" id="formularioRegistrar">
+            <form>
+              <div class="d-flex justify-content-center">
+                <h2>Registro de Ventas</h2>
+              </div>
+              <div class="form-group">
+                <label for="date">Fecha</label>
+                <input type="date" class="form-control" id="date" placeholder="Fecha"/>
+              </div>
+              <div class="form-group">
+                <label for="id">Identificador de Venta</label>
+                <input type="number" class="form-control" id="id" placeholder="ID de Venta" />
+              </div>
+              <div class="form-group">
+                <label for="idCliente">Identificador de Cliente</label>
+                <input type="number" class="form-control" id="idCliente" placeholder="ID del Cliente" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nombre del Cliente</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre del Cliente" />
+              </div>
+              <div class="form-group">
+                <label for="detalle">Detalle</label>
+                <textarea class="form-control" id="detalle" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="valor">Valor Venta</label>
+                <input type="number" class="form-control" id="valor" placeholder="Valor Venta" />
+              </div>
+              <div class="form-group">
+                <label for="estado">Estado de la Venta</label>
+                <select class="form-control" id="estado">
+                  <option>Cancelado</option>
+                  <option>Pendiente Pago</option>
+                </select>
+              </div>
+              <div class="d-flex pt-4 justify-content-center">
+                <button type="button" id="guardarVenta" class="btn btn-outline-primary">Guardar</button>
+              </div>
+            </form>
+          </div>
+          <div class="container contenedor-formulario-ventas contenedor-formulario-editar-ventas justify-content-center" id="formularioEditar">
+            <form>
+              <div class="d-flex justify-content-center">
+                <h2>Registro de Ventas</h2>
+              </div>
+              <div class="form-group">
+                <label for="id">Identificador de Venta</label>
+                <input type="number" class="form-control" id="idEditar" placeholder="ID Venta" disabled />
+              </div>
+              <div class="form-group">
+                <label for="idCliente">Identificador de Cliente</label>
+                <input type="number" class="form-control" id="idClienteEditar" placeholder="ID del Cliente" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nombre del Cliente</label>
+                <input type="text" class="form-control" id="nameEditar" placeholder="Nombre del Cliente" />
+              </div>
+              <div class="form-group">
+                <label for="date">Nombre del Cliente</label>
+                <input type="date" class="form-control" id="dateEditar" placeholder="Nombre del Cliente" />
+              </div>
+              <div class="form-group">
+                <label for="detalle">Detalle</label>
+                <textarea class="form-control" id="detalleEditar" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="valor">Valor</label>
+                <input type="number" class="form-control" id="valorEditar" placeholder="Valor Venta" />
+              </div>
+              <div class="form-group">
+                <label for="estado">Estado de la Venta</label>
+                <select class="form-control" id="estadoEditar">
+                  <option>Cancelado</option>
+                  <option>Pendiente Pago</option>
+                </select>
+              </div>
+              <div class="d-flex pt-4 justify-content-center">
+                <button type="button" id="editarventa" class="btn btn-outline-primary">Editar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input class="form-control mb-4 buscador input-sm" id="filtro" type="text" placeholder="Buscar" />
+          <button type="button" id="btnBuscar" class="btn btn-outline-primary">Filtrar</button>
+          <button type="button" id="btnCancelar" class="btn btn-outline-danger">Cancelar</button>
+          <div class="d-flex contenedor-tabla-ventas">
+            <table class="table table-bordered table-light">
+              <thead>
+                <tr>
+                  <th class="text-center" scope="col">ID Venta</th>
+                  <th class="text-center" scope="col">ID Cliente</th>
+                  <th class="text-center" scope="col">Nombre</th>
+                  <th class="text-center" scope="col">Fecha</th>
+                  <th class="text-center" scope="col">Detalle</th>
+                  <th class="text-center" scope="col">Valor</th>
+                  <th class="text-center" scope="col">Estado Producto</th>
+                  <th class="text-center" scope="col" colspan="2">Opciones</th>
+                </tr>
+              </thead>
+              <tbody id="ReadVentas"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Inicio Footer -->
+    <footer>
+      <div class="container text-center">
+        <span>Desarrollado por Support Code 2021</span>
+      </div>
+    </footer>
+    <!-- Fin Footer -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/app-ventas.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
