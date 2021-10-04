@@ -23,20 +23,25 @@ function actualizarVenta() {
 
   ventas.map((el) => {
     if (el.id == id) {
-      el.detalle = detalle;
-      el.date = date;
-      el.idCliente = idCliente;
-      el.name = name;
-      el.valor = valor;
-      el.estado = estado;
+      if (idCliente != "" && name != "" && date != "" && detalle != "" && valor != "" && estado != "") {
+        el.detalle = detalle;
+        el.date = date;
+        el.idCliente = idCliente;
+        el.name = name;
+        el.valor = valor;
+        el.estado = estado;
+
+        document.getElementById("formularioRegistrar").style.display = "block";
+        document.getElementById("formularioEditar").style.display = "none";
+
+        cargarVentas();
+        limpiarCampos();
+        confirmarActualizacionVenta();
+      } else {
+        alert("Todos los campos debern ser diligenciados");
+      }
     }
   });
-
-  document.getElementById("formularioRegistrar").style.display = "block";
-  document.getElementById("formularioEditar").style.display = "none";
-
-  cargarVentas();
-  limpiarCampos();
 }
 
 function agregarVentas() {
@@ -221,6 +226,18 @@ function confirmarRegistroVenta(nombreCliente, detalleVenta, valorVenta, estado)
     <b>Valor de la venta: </b> $${valorVenta}<br>
     <b>Estado de la venta: </b>${estado}`,
 
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
+}
+
+function confirmarActualizacionVenta() {
+  Swal.fire({
+    title: "Actualización exitosa",
     showClass: {
       popup: "animate__animated animate__fadeInDown",
     },
