@@ -62,6 +62,7 @@ function agregarVentas() {
       };
 
       ventas.push(venta);
+      confirmarRegistroVenta(name, detalle, valor, estado);
 
       $tbody.innerHTML += `<tr>
       <td>${venta.id}</td>
@@ -168,7 +169,7 @@ function mostrarError(msg) {
 }
 
 function validarCampos(id, idCliente, name, date, detalle, valor) {
-  if (id !== ""&& idCliente !== "" && name !== ""&& date !== ""&& detalle !== "" && valor !== "") {
+  if (id !== "" && idCliente !== "" && name !== "" && date !== "" && detalle !== "" && valor !== "") {
     return true;
   } else {
     return false;
@@ -212,3 +213,19 @@ function filtrar() {
   }
 }
 
+function confirmarRegistroVenta(nombreCliente, detalleVenta, valorVenta, estado) {
+  Swal.fire({
+    title: "Registro exitoso",
+    html: `<b>Nombre del cliente: </b> ${nombreCliente}<br>
+    <b>Detalle de la venta: </b> ${detalleVenta} <br>
+    <b>Valor de la venta: </b> $${valorVenta}<br>
+    <b>Estado de la venta: </b>${estado}`,
+
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
+}
