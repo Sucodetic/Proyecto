@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #f1f1f1;
+    background-color: #ffffff;
 }
 
 #btnCancelar {
@@ -29,6 +29,35 @@ body {
     padding: 4%;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgb(0 0 0 / 30%), 0 0 2px rgb(0 0 0 / 10%) inset;
+}
+
+.contenedor-formulario-ventas h2 {
+    color: #7fcc2b;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contenedor-formulario-ventas label {
+    color: #008037;
+}
+
+.login-form h2 {
+    color: #7fcc2b;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.login-form h4{
+    color: #008037;
+}
+
+.contenedor-tarjetas h2 {
+    color: #7fcc2b;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.contenedor-tarjetas h5 {
+    color: #008037;
 }
 
 
@@ -60,6 +89,7 @@ body {
 form button {
     width: 200px;
     justify-content: center;
+    background-color: #7fcc2b;
 }
 
 footer {
@@ -95,14 +125,16 @@ footer span:hover {
 
 nav {
     position: relative;
+    background-color: #ffffff;
 }
 
 #navbarNav {
     justify-content: end;
 }
 
-#navbarNav ul li  a:hover {
-    font-weight: bold;   
+#navbarNav ul li  a{
+    font-weight: bold;  
+    color: #008037; 
 }
 
 
