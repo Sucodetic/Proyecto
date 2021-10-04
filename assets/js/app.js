@@ -184,3 +184,15 @@ function filtrar() {
     }
   }
 }
+
+function confirmarActualizacionProducto() {
+  Swal.fire({
+    title: "Actualización de producto exitoso",
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
+}
